@@ -8,6 +8,17 @@ const outPath = path.join(outDir, "map-viewer.html");
 
 const map = JSON.parse(fs.readFileSync(mapPath, "utf8"));
 
+const xs = map.nodes.map((node) => node.x);
+const ys = map.nodes.map((node) => node.y);
+const minX = Math.min(...xs);
+const maxX = Math.max(...xs);
+const minY = Math.min(...ys);
+const maxY = Math.max(...ys);
+const scale = 88;
+const padding = 88;
+const viewWidth = (maxX - minX + 1) * scale + padding * 2;
+const viewHeight = (maxY - minY + 1) * scale + padding * 2;
+
 const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -22,11 +33,12 @@ const html = `<!doctype html>
       --muted: #5d6c78;
       --line: #8ca1b3;
       --lane: #274c77;
-      --buffer: #2a9d8f;
+      --buffer: rgb(13, 231, 24);
       --service: #e76f51;
       --charge: #e9c46a;
       --intersection: #8d5fd3;
       --grid: rgba(39, 76, 119, 0.08);
+      --safety: hsl(123, 83%, 50%)
     }
 
     * { box-sizing: border-box; }
@@ -209,7 +221,7 @@ const html = `<!doctype html>
 <body>
   <div class="layout">
     <div class="canvas-wrap">
-      <svg id="map" viewBox="0 0 900 720" aria-label="Factory map viewer"></svg>
+      <svg id="map" viewBox="0 0 ${viewWidth} ${viewHeight}" aria-label="Factory map viewer"></svg>
     </div>
     <aside class="panel">
       <h1>Map Viewer</h1>
@@ -235,6 +247,7 @@ const html = `<!doctype html>
         <div class="legend-item"><span class="swatch" style="background: var(--buffer)"></span>Buffer</div>
         <div class="legend-item"><span class="swatch" style="background: var(--service)"></span>Service access</div>
         <div class="legend-item"><span class="swatch" style="background: var(--charge)"></span>Charge</div>
+        <div class="legend-item"><span class="swatch" style="background: var(--safety)"></span>Safety zone</div>
       </section>
 
       <section class="node-list">
@@ -250,6 +263,8 @@ const html = `<!doctype html>
     const nodeList = document.getElementById("node-list");
     const scale = 88;
     const padding = 88;
+    const minX = ${minX};
+    const minY = ${minY};
 
     const colorByType = {
       lane: "#274c77",
@@ -257,11 +272,12 @@ const html = `<!doctype html>
       buffer: "#2a9d8f",
       service: "#e76f51",
       charge: "#e9c46a",
+      safety: "hsl(123, 83%, 50%)",
     };
 
     const pos = (node) => ({
-      x: padding + node.x * scale,
-      y: padding + node.y * scale,
+      x: padding + (node.x - minX) * scale,
+      y: padding + (node.y - minY) * scale,
     });
 
     const nodesById = new Map(map.nodes.map((node) => [node.id, node]));

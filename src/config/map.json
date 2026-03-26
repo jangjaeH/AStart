@@ -1,113 +1,113 @@
 {
   "nodes": [
     {
-      "id": "BUF-W1",
+      "id": "CHG-L",
+      "x": 1,
+      "y": 0,
+      "type": "charge",
+      "zone": "LEFT-CHARGE",
+      "tags": [
+        "charge"
+      ]
+    },
+    {
+      "id": "L-T",
+      "x": 1,
+      "y": 2,
+      "type": "lane",
+      "zone": "LEFT-VERTICAL"
+    },
+    {
+      "id": "L-T2",
+      "x": 1,
+      "y": 3,
+      "type": "lane",
+      "zone": "LEFT-VERTICAL"
+    },
+    {
+      "id": "L-M",
+      "x": 1,
+      "y": 4,
+      "type": "lane",
+      "zone": "LEFT-STAGE"
+    },
+    {
+      "id": "L-B",
+      "x": 1,
+      "y": 6,
+      "type": "lane",
+      "zone": "LEFT-VERTICAL"
+    },
+    {
+      "id": "EQ-L1-ACCESS",
       "x": 0,
       "y": 2,
-      "type": "buffer",
-      "zone": "WEST-IN",
-      "tags": [
-        "buffer",
-        "inbound"
-      ]
-    },
-    {
-      "id": "BUF-W2",
-      "x": 0,
-      "y": 4,
-      "type": "buffer",
-      "zone": "WEST-OUT",
-      "tags": [
-        "buffer",
-        "outbound"
-      ]
-    },
-    {
-      "id": "CHG-W",
-      "x": 0,
-      "y": 0,
-      "type": "charge",
-      "zone": "WEST-CHARGE",
-      "tags": [
-        "charge"
-      ]
-    },
-    {
-      "id": "CHG-E",
-      "x": 8,
-      "y": 6,
-      "type": "charge",
-      "zone": "EAST-CHARGE",
-      "tags": [
-        "charge"
-      ]
-    },
-    {
-      "id": "W-TOP",
-      "x": 1,
-      "y": 1,
-      "type": "lane",
-      "zone": "TOP-LANE"
-    },
-    {
-      "id": "W-MID",
-      "x": 1,
-      "y": 3,
-      "type": "lane",
-      "zone": "MID-LANE"
-    },
-    {
-      "id": "W-BOT",
-      "x": 1,
-      "y": 5,
-      "type": "lane",
-      "zone": "BOT-LANE"
-    },
-    {
-      "id": "N1",
-      "x": 2,
-      "y": 1,
-      "type": "lane",
-      "zone": "TOP-LANE"
-    },
-    {
-      "id": "N2",
-      "x": 2,
-      "y": 3,
-      "type": "intersection",
-      "zone": "WEST-CROSS",
-      "tags": [
-        "merge"
-      ]
-    },
-    {
-      "id": "N3",
-      "x": 2,
-      "y": 5,
-      "type": "lane",
-      "zone": "BOT-LANE"
-    },
-    {
-      "id": "EQ-A1-ACCESS",
-      "x": 3,
-      "y": 0,
       "type": "service",
-      "zone": "LINE-A",
+      "zone": "LEFT-BAY",
       "tags": [
         "equipment",
-        "access"
+        "access",
+        "photo-blue"
       ]
     },
     {
-      "id": "N4",
-      "x": 3,
-      "y": 1,
+      "id": "EQ-L2-ACCESS",
+      "x": 0,
+      "y": 6,
+      "type": "service",
+      "zone": "LEFT-BAY",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "C1",
+      "x": 23,
+      "y": 2,
       "type": "lane",
       "zone": "TOP-LANE"
     },
-    {
-      "id": "N5",
+        {
+      "id": "M1",
       "x": 3,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+      
+    },
+    {
+      "id": "T1",
+      "x": 3,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+      
+    },
+    {
+      "id": "T2",
+      "x": 5,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+      
+    },
+    {
+      "id": "T3",
+      "x": 7,
       "y": 3,
       "type": "intersection",
       "zone": "CENTRAL",
@@ -117,425 +117,1135 @@
       ]
     },
     {
-      "id": "N6",
+      "id": "T3.5",
+      "x": 8,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "T4",
+      "x": 9,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+      
+    },
+    {
+      "id": "T5",
+      "x": 11,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+      
+    },
+    {
+      "id": "T6",
+      "x": 13,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "T7",
+      "x": 15,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "T8",
+      "x": 17,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "T8.5",
+      "x": 18,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "T9",
+      "x": 19,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "T10",
+      "x": 21,
+      "y": 3,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M1",
       "x": 3,
-      "y": 5,
-      "type": "lane",
-      "zone": "BOT-LANE"
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+      
+    },
+    {
+      "id": "M2",
+      "x": 5,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M3",
+      "x": 7,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M3.5",
+      "x": 8,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M4",
+      "x": 9,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M5",
+      "x": 11,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M6",
+      "x": 13,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M7",
+      "x": 15,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M8",
+      "x": 17,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M8.5",
+      "x": 18,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M9",
+      "x": 19,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "M10",
+      "x": 21,
+      "y": 4,
+      "type": "intersection",
+      "zone": "CENTRAL",
+      "tags": [
+        "bottleneck",
+        "reservation-zone"
+      ]
+    },
+    {
+      "id": "EQ-T1-ACCESS",
+      "x": 5,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T2-ACCESS",
+      "x": 7,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T3-ACCESS",
+      "x": 9,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T4-ACCESS",
+      "x": 11,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T5-ACCESS",
+      "x": 13,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T6-ACCESS",
+      "x": 15,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T7-ACCESS",
+      "x": 17,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T8-ACCESS",
+      "x": 19,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-T10-ACCESS",
+      "x": 21,
+      "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
     },
     {
       "id": "EQ-B1-ACCESS",
-      "x": 3,
-      "y": 6,
+      "x": 5,
+      "y": 4.6,
       "type": "service",
-      "zone": "LINE-B",
+      "zone": "BOTTOM-EQUIPMENT",
       "tags": [
         "equipment",
-        "access"
+        "access",
+        "photo-blue"
       ]
-    },
-    {
-      "id": "N7",
-      "x": 4,
-      "y": 1,
-      "type": "lane",
-      "zone": "TOP-LANE"
-    },
-    {
-      "id": "N8",
-      "x": 4,
-      "y": 3,
-      "type": "intersection",
-      "zone": "CENTRAL",
-      "tags": [
-        "bottleneck",
-        "reservation-zone"
-      ]
-    },
-    {
-      "id": "N9",
-      "x": 4,
-      "y": 5,
-      "type": "lane",
-      "zone": "BOT-LANE"
-    },
-    {
-      "id": "EQ-A2-ACCESS",
-      "x": 5,
-      "y": 0,
-      "type": "service",
-      "zone": "LINE-A",
-      "tags": [
-        "equipment",
-        "access"
-      ]
-    },
-    {
-      "id": "N10",
-      "x": 5,
-      "y": 1,
-      "type": "lane",
-      "zone": "TOP-LANE"
-    },
-    {
-      "id": "N11",
-      "x": 5,
-      "y": 3,
-      "type": "intersection",
-      "zone": "CENTRAL",
-      "tags": [
-        "bottleneck",
-        "reservation-zone"
-      ]
-    },
-    {
-      "id": "N12",
-      "x": 5,
-      "y": 5,
-      "type": "lane",
-      "zone": "BOT-LANE"
     },
     {
       "id": "EQ-B2-ACCESS",
-      "x": 5,
-      "y": 6,
+      "x": 7,
+      "y": 4.6,
       "type": "service",
-      "zone": "LINE-B",
+      "zone": "BOTTOM-EQUIPMENT",
       "tags": [
         "equipment",
-        "access"
+        "access",
+        "photo-blue"
       ]
     },
     {
-      "id": "N13",
-      "x": 6,
-      "y": 1,
-      "type": "lane",
-      "zone": "TOP-LANE"
-    },
-    {
-      "id": "N14",
-      "x": 6,
-      "y": 3,
-      "type": "intersection",
-      "zone": "EAST-CROSS",
-      "tags": [
-        "merge"
-      ]
-    },
-    {
-      "id": "N15",
-      "x": 6,
-      "y": 5,
-      "type": "lane",
-      "zone": "BOT-LANE"
-    },
-    {
-      "id": "E-TOP",
-      "x": 7,
-      "y": 1,
-      "type": "buffer",
-      "zone": "EAST-IN",
-      "tags": [
-        "buffer",
-        "handoff"
-      ]
-    },
-    {
-      "id": "E-MID",
-      "x": 7,
-      "y": 3,
-      "type": "buffer",
-      "zone": "EAST-STAGE",
-      "tags": [
-        "buffer"
-      ]
-    },
-    {
-      "id": "E-BOT",
-      "x": 7,
-      "y": 5,
-      "type": "buffer",
-      "zone": "EAST-OUT",
-      "tags": [
-        "buffer",
-        "handoff"
-      ]
-    },
-    {
-      "id": "EQ-C1-ACCESS",
+      "id": "SAFETY-ZONE-1",
       "x": 8,
-      "y": 2,
+      "y": 2.6,
+      "type": "buffer",
+      "zone": "SAFETY-ZONE",
+      "tags": ["safety-zone", "avoid-zone"]
+    },
+    {
+      "id": "SAFETY-ZONE-2",
+      "x": 8,
+      "y": 4.6,
+      "type": "buffer",
+      "zone": "SAFETY-ZONE",
+      "tags": ["safety-zone", "avoid-zone"]
+    },
+    {
+      "id": "EQ-B3-ACCESS",
+      "x": 9,
+      "y": 4.6,
       "type": "service",
-      "zone": "LINE-C",
+      "zone": "BOTTOM-EQUIPMENT",
       "tags": [
         "equipment",
-        "access"
+        "access",
+        "photo-blue"
       ]
     },
     {
-      "id": "EQ-C2-ACCESS",
-      "x": 8,
+      "id": "EQ-B4-ACCESS",
+      "x": 13,
+      "y": 4.6,
+      "type": "service",
+      "zone": "BOTTOM-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-B5-ACCESS",
+      "x": 15,
+      "y": 4.6,
+      "type": "service",
+      "zone": "BOTTOM-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-B6-ACCESS",
+      "x": 17,
+      "y": 4.6,
+      "type": "service",
+      "zone": "BOTTOM-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "SAFETY-ZONE-3",
+      "x": 18,
+      "y": 2.6,
+      "type": "buffer",
+      "zone": "SAFETY-ZONE",
+      "tags": ["safety-zone", "avoid-zone"]
+    },
+    {
+      "id": "SAFETY-ZONE-4",
+      "x": 18,
+      "y": 4.6,
+      "type": "buffer",
+      "zone": "SAFETY-ZONE",
+      "tags": ["safety-zone", "avoid-zone"]
+    },
+    {
+      "id": "EQ-B7-ACCESS",
+      "x": 19,
+      "y": 4.6,
+      "type": "service",
+      "zone": "BOTTOM-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-B10-ACCESS",
+      "x": 21,
+      "y": 4.6,
+      "type": "service",
+      "zone": "BOTTOM-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "R-T",
+      "x": 23,
+      "y": 3,
+      "type": "lane",
+      "zone": "RIGHT-STAGE"
+    },
+    {
+      "id": "R-M",
+      "x": 23,
+      "y": 4,
+      "type": "lane",
+      "zone": "RIGHT-STAGE"
+    },
+    {
+      "id": "CHG-R",
+      "x": 23,
+      "y": 0.5,
+      "type": "charge",
+      "zone": "RIGHT-CHARGE",
+      "tags": [
+        "charge"
+      ]
+    },
+    {
+      "id": "EQ-R1-ACCESS",
+      "x": 23,
       "y": 4,
       "type": "service",
-      "zone": "LINE-C",
+      "zone": "TRANSFER-TABLE",
       "tags": [
         "equipment",
-        "access"
+        "access",
+        "photo-blue"
       ]
     }
   ],
   "edges": [
     {
-      "from": "CHG-W",
-      "to": "BUF-W1",
+      "from": "CHG-L",
+      "to": "L-T",
       "cost": 1,
       "bidirectional": true
     },
     {
-      "from": "BUF-W1",
-      "to": "W-MID",
+      "from": "L-T",
+      "to": "L-M",
       "cost": 1,
       "bidirectional": true
     },
     {
-      "from": "BUF-W2",
-      "to": "W-BOT",
+      "from": "L-M",
+      "to": "L-B",
       "cost": 1,
       "bidirectional": true
     },
     {
-      "from": "BUF-W2",
-      "to": "W-MID",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "BUF-W1",
-      "to": "W-TOP",
-      "cost": 1.2,
-      "bidirectional": true
-    },
-    {
-      "from": "W-TOP",
-      "to": "N1",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "W-MID",
-      "to": "N2",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "W-BOT",
-      "to": "N3",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N1",
-      "to": "N4",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N4",
-      "to": "N7",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N7",
-      "to": "N10",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N10",
-      "to": "N13",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N13",
-      "to": "E-TOP",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N3",
-      "to": "N6",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N6",
-      "to": "N9",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N9",
-      "to": "N12",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N12",
-      "to": "N15",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N15",
-      "to": "E-BOT",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N2",
-      "to": "N5",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N5",
-      "to": "N8",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N8",
-      "to": "N11",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N11",
-      "to": "N14",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N14",
-      "to": "E-MID",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N1",
-      "to": "N2",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N2",
-      "to": "N3",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N4",
-      "to": "N5",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N5",
-      "to": "N6",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N7",
-      "to": "N8",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N8",
-      "to": "N9",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N10",
-      "to": "N11",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N11",
-      "to": "N12",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N13",
-      "to": "N14",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N14",
-      "to": "N15",
-      "cost": 1,
-      "bidirectional": true
-    },
-    {
-      "from": "N4",
-      "to": "EQ-A1-ACCESS",
+      "from": "L-T",
+      "to": "EQ-L1-ACCESS",
       "cost": 0.8,
       "bidirectional": true
     },
     {
-      "from": "N10",
-      "to": "EQ-A2-ACCESS",
+      "from": "L-B",
+      "to": "EQ-L2-ACCESS",
       "cost": 0.8,
       "bidirectional": true
     },
     {
-      "from": "N6",
+      "from": "L-T",
+      "to": "L-T2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "L-M",
+      "to": "M1",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "L-B",
+      "to": "B1",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T1",
+      "to": "T2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T2",
+      "to": "T3",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T3",
+      "to": "T4",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T4",
+      "to": "T5",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T5",
+      "to": "T6",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T6",
+      "to": "T7",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T7",
+      "to": "T8",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T8",
+      "to": "T9",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M1",
+      "to": "M2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M2",
+      "to": "M3",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M3",
+      "to": "M4",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M3.5",
+      "to": "SAFETY-ZONE-1",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M3.5",
+      "to": "SAFETY-ZONE-2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M4",
+      "to": "M5",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M5",
+      "to": "M6",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M6",
+      "to": "M7",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M7",
+      "to": "M8",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M8",
+      "to": "M9",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B1",
+      "to": "B2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B2",
+      "to": "B3",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B3",
+      "to": "B4",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B4",
+      "to": "B5",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B5",
+      "to": "B6",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B6",
+      "to": "B7",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B7",
+      "to": "B8",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "B8",
+      "to": "B9",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T1",
+      "to": "M1",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M1",
+      "to": "B1",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T2",
+      "to": "M2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M2",
+      "to": "B2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T3",
+      "to": "M3",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M3",
+      "to": "B3",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T4",
+      "to": "M4",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M4",
+      "to": "B4",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T5",
+      "to": "M5",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M5",
+      "to": "B5",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T6",
+      "to": "M6",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M6",
+      "to": "B6",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T7",
+      "to": "M7",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M7",
+      "to": "B7",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T8",
+      "to": "M8",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M8",
+      "to": "B8",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "T9",
+      "to": "M9",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M9",
+      "to": "B9",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "AVD-1",
+      "to": "AVD-2",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "AVD-2",
+      "to": "AVD-3",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "AVD-3",
+      "to": "AVD-4",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "AVD-4",
+      "to": "AVD-5",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "M3",
+      "to": "AVD-1",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "B3",
+      "to": "AVD-1",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M4",
+      "to": "AVD-2",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "B4",
+      "to": "AVD-2",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M5",
+      "to": "AVD-3",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "B5",
+      "to": "AVD-3",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M6",
+      "to": "AVD-4",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "B6",
+      "to": "AVD-4",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M7",
+      "to": "AVD-5",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "B7",
+      "to": "AVD-5",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M2",
+      "to": "EQ-T1-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M3",
+      "to": "EQ-T2-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M4",
+      "to": "EQ-T3-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M5",
+      "to": "EQ-T4-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M6",
+      "to": "EQ-T5-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M7",
+      "to": "EQ-T6-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M8",
+      "to": "EQ-T7-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M9",
+      "to": "EQ-T8-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M10",
+      "to": "EQ-T10-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M5",
+      "to": "EQ-CENTER-ACCESS",
+      "cost": 0.6,
+      "bidirectional": true
+    },
+    {
+      "from": "M2",
       "to": "EQ-B1-ACCESS",
       "cost": 0.8,
       "bidirectional": true
     },
     {
-      "from": "N12",
+      "from": "M3",
       "to": "EQ-B2-ACCESS",
       "cost": 0.8,
       "bidirectional": true
     },
     {
-      "from": "E-MID",
-      "to": "EQ-C1-ACCESS",
-      "cost": 1.2,
+      "from": "M4",
+      "to": "EQ-B3-ACCESS",
+      "cost": 0.8,
       "bidirectional": true
     },
     {
-      "from": "E-MID",
-      "to": "EQ-C2-ACCESS",
-      "cost": 1.2,
+      "from": "M6",
+      "to": "EQ-B4-ACCESS",
+      "cost": 0.8,
       "bidirectional": true
     },
     {
-      "from": "E-TOP",
-      "to": "E-MID",
+      "from": "M7",
+      "to": "EQ-B5-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M8",
+      "to": "EQ-B6-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M8.5",
+      "to": "SAFETY-ZONE-3",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M8.5",
+      "to": "SAFETY-ZONE-4",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M9",
+      "to": "EQ-B7-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M10",
+      "to": "EQ-B10-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "T9",
+      "to": "R-T",
       "cost": 1,
       "bidirectional": true
     },
     {
-      "from": "E-MID",
-      "to": "E-BOT",
+      "from": "M9",
+      "to": "R-M",
       "cost": 1,
       "bidirectional": true
     },
     {
-      "from": "E-BOT",
-      "to": "CHG-E",
+      "from": "B9",
+      "to": "R-B",
       "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "R-T",
+      "to": "R-M",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "R-M",
+      "to": "R-B",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "C1",
+      "to": "CHG-R",
+      "cost": 1,
+      "bidirectional": true
+    },
+        {
+      "from": "R-T",
+      "to": "C1",
+      "cost": 1,
+      "bidirectional": true
+    },
+    {
+      "from": "R-M",
+      "to": "EQ-R1-ACCESS",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "L-T2",
+      "to": "T1",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T1",
+      "to": "T2",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T2",
+      "to": "T3",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T3",
+      "to": "T4",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T4",
+      "to": "T5",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T6",
+      "to": "T7",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T7",
+      "to": "T8",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T7",
+      "to": "T8.5",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T8",
+      "to": "T9",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "T9",
+      "to": "T10",
+      "cost": 0.5,
       "bidirectional": true
     }
   ]

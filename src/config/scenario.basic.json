@@ -14,13 +14,13 @@
 "robots": [
     {
     "robotId": "R1",
-    "nodeId": "BUF-W1",
+    "nodeId": "EQ-L1-ACCESS",
     "heading": "E",
     "mode": "IDLE"
     },
     {
     "robotId": "R2",
-    "nodeId": "BUF-W1",
+    "nodeId": "EQ-L2-ACCESS",
     "heading": "E",
     "mode": "IDLE"
     },
