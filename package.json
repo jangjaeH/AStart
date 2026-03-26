@@ -1,0 +1,35 @@
+{
+  "name": "astar",
+  "version": "1.0.0",
+  "description": "Node.js PoC scaffold for multi-robot weighted A* planning with reservation tables.",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "simulate": "npm run build && node dist/simulation/scenario-runner.js",
+    "start": "npm run build && node dist/app.js",
+    "dev": "npm run start"
+  },
+  "keywords": [
+    "astar",
+    "planner",
+    "multi-robot",
+    "redis",
+    "simulation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "ioredis": "^5.10.1",
+    "pdf-parse": "^2.4.5",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
