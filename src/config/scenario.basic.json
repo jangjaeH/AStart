@@ -1,0 +1,65 @@
+{
+"name": "basic-factory-test",
+"map": {
+    "nodes": [
+    { "id": "BUF-W1", "x": 0, "y": 2, "type": "buffer" },
+    { "id": "N1", "x": 1, "y": 2, "type": "lane" },
+    { "id": "EQ-A1", "x": 2, "y": 2, "type": "service" }
+    ],
+    "edges": [
+    { "from": "BUF-W1", "to": "N1", "cost": 1, "bidirectional": true },
+    { "from": "N1", "to": "EQ-A1", "cost": 1, "bidirectional": true }
+    ]
+},
+"robots": [
+    {
+    "robotId": "R1",
+    "nodeId": "BUF-W1",
+    "heading": "E",
+    "mode": "IDLE"
+    },
+    {
+    "robotId": "R2",
+    "nodeId": "BUF-W1",
+    "heading": "E",
+    "mode": "IDLE"
+    },
+    {
+    "robotId": "R3",
+    "nodeId": "BUF-W1",
+    "heading": "E",  
+    "mode": "IDLE"
+    },
+    {
+    "robotId": "R4",
+    "nodeId": "BUF-W1",
+    "heading": "E",  
+    "mode": "IDLE"
+    }
+],
+"equipments": [
+    {
+    "id": "EQ-A1",
+    "accessNodeId": "EQ-A1",
+    "processTimeSec": 20,
+    "setupTimeSec": 5
+    }
+],
+"tasks": [
+    {
+    "id": "TASK-001",
+    "sourceNode": "BUF-W1",
+    "targetNode": "EQ-A1",
+    "priority": 100
+    }
+],
+"timing": {
+    "robotMoveSecondsPerEdge": 3,
+    "robotWaitSecondsPerTick": 2,
+    "defaultTaskServiceSeconds": 10,
+    "defaultEquipmentProcessSeconds": 20
+},
+"optimization": {
+    "objective": "minimize_makespan"
+}
+}
