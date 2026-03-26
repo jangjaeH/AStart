@@ -4,16 +4,16 @@ import { createSeedScenario } from "./simulation/seed-scenario";
 
 async function bootstrap() {
   const port = Number(process.env.PORT ?? 3000);
-  const snapshot = createSeedScenario();
+  const scenario = createSeedScenario();
   const redis = new RedisAdapter();
   const redisConnected = await redis.connect();
-  await redis.publishPlan(snapshot);
+  await redis.publishPlan(scenario.snapshot);
 
-  const app = createServer(snapshot);
+  const app = createServer(scenario);
   app.listen(port, () => {
     console.log(
       JSON.stringify({
-        message: "Multi-robot A* PoC server started",
+        message: "Multi-robot A* engine server started",
         port,
         redisConnected,
         endpoints: ["/health", "/robots", "/tasks", "/simulation/start"],

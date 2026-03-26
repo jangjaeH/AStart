@@ -26,6 +26,14 @@ export interface PlannerMap {
   edges: MapEdge[];
 }
 
+export interface EquipmentDefinition {
+  id: string;
+  accessNodeId: string;
+  zone?: string;
+  processTimeSec?: number;
+  setupTimeSec?: number;
+}
+
 export interface Task {
   id: string;
   sourceNode: string;
@@ -54,8 +62,10 @@ export interface EquipmentFault {
 
 export interface WorldSnapshot {
   version: number;
+  map?: PlannerMap;
   robots: RobotState[];
   tasks: Task[];
+  equipments?: EquipmentDefinition[];
   equipmentFaults: EquipmentFault[];
 }
 
@@ -78,4 +88,50 @@ export interface PlannedRoute {
 export interface SchedulerResult {
   routes: PlannedRoute[];
   unassignedTasks: Task[];
+}
+
+export interface EngineTimingConfig {
+  secondsPerTick: number;
+  robotMoveSecondsPerEdge: number;
+  robotWaitSecondsPerTick: number;
+  defaultTaskServiceSeconds: number;
+  defaultEquipmentProcessSeconds: number;
+}
+
+export interface EngineOptimizationConfig {
+  objective: "minimize_makespan" | "minimize_total_cost" | "balanced";
+}
+
+export interface EngineScenario {
+  id: string;
+  name: string;
+  snapshot: WorldSnapshot;
+  timing: EngineTimingConfig;
+  optimization: EngineOptimizationConfig;
+}
+
+export interface RobotExecutionSummary {
+  robotId: string;
+  taskId: string;
+  travelSeconds: number;
+  waitSeconds: number;
+  serviceSeconds: number;
+  completionSeconds: number;
+}
+
+export interface EngineMetrics {
+  makespanSeconds: number;
+  totalTravelSeconds: number;
+  totalWaitSeconds: number;
+  totalServiceSeconds: number;
+  routeCount: number;
+  unassignedTaskCount: number;
+}
+
+export interface EnginePlanResult {
+  scenarioId: string;
+  scenarioName: string;
+  scheduler: SchedulerResult;
+  robotSummaries: RobotExecutionSummary[];
+  metrics: EngineMetrics;
 }

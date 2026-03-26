@@ -17,7 +17,7 @@ function selectTask(tasks: Task[], robot: RobotState): Task | undefined {
 }
 
 export function runScheduler(snapshot: WorldSnapshot): SchedulerResult {
-  const plannerMap = loadPlannerMap();
+  const plannerMap = snapshot.map ?? loadPlannerMap();
   const weightedMap = buildWeightedMap(plannerMap, snapshot.equipmentFaults, plannerConfig);
   const reservations = new ReservationTable();
   const planner = new WeightedAStarPlanner(weightedMap, reservations, plannerConfig);

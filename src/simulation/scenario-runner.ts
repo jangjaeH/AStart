@@ -1,11 +1,16 @@
-import { runScheduler } from "../scheduler/task-scheduler";
+import { createPlannerEngine } from "../engine";
 import { createSeedScenario } from "./seed-scenario";
 
-const snapshot = createSeedScenario();
-const result = runScheduler(snapshot);
+const scenario = createSeedScenario();
+const engine = createPlannerEngine();
+const result = engine.runScenario(scenario);
 
 console.log(JSON.stringify({
-  snapshotVersion: snapshot.version,
-  assignedRoutes: result.routes,
-  unassignedTasks: result.unassignedTasks
+  scenarioId: result.scenarioId,
+  scenarioName: result.scenarioName,
+  snapshotVersion: scenario.snapshot.version,
+  metrics: result.metrics,
+  assignedRoutes: result.scheduler.routes,
+  unassignedTasks: result.scheduler.unassignedTasks,
+  robotSummaries: result.robotSummaries,
 }, null, 2));
