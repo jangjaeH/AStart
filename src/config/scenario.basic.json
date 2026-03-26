@@ -1,16 +1,6 @@
 {
 "name": "basic-factory-test",
-"map": {
-    "nodes": [
-    { "id": "BUF-W1", "x": 0, "y": 2, "type": "buffer" },
-    { "id": "N1", "x": 1, "y": 2, "type": "lane" },
-    { "id": "EQ-A1", "x": 2, "y": 2, "type": "service" }
-    ],
-    "edges": [
-    { "from": "BUF-W1", "to": "N1", "cost": 1, "bidirectional": true },
-    { "from": "N1", "to": "EQ-A1", "cost": 1, "bidirectional": true }
-    ]
-},
+"mapFile": "src/config/map.json",
 "robots": [
     {
     "robotId": "R1",
@@ -26,13 +16,13 @@
     },
     {
     "robotId": "R3",
-    "nodeId": "BUF-W1",
+    "nodeId": "SAFETY-ZONE-3",
     "heading": "E",  
     "mode": "IDLE"
     },
     {
     "robotId": "R4",
-    "nodeId": "BUF-W1",
+    "nodeId": "SAFETY-ZONE-4",
     "heading": "E",  
     "mode": "IDLE"
     }
@@ -48,7 +38,29 @@
 "tasks": [
     {
     "id": "TASK-001",
-    "sourceNode": "BUF-W1",
+    "robotId": "R1",
+    "sourceNode": "EQ-L1-ACCESS",
+    "targetNode": "EQ-A1",
+    "priority": 100
+    },
+    {
+    "id": "TASK-002",
+    "robotId": "R2",
+    "sourceNode": "EQ-L2-ACCESS",
+    "targetNode": "EQ-A1",
+    "priority": 100
+    },
+    {
+    "id": "TASK-003",
+    "robotId": "R3",
+    "sourceNode": "SAFETY-ZONE-3",
+    "targetNode": "EQ-A1",
+    "priority": 100
+    },
+    {
+    "id": "TASK-004",
+    "robotId": "R4",
+    "sourceNode": "SAFETY-ZONE-4",
     "targetNode": "EQ-A1",
     "priority": 100
     }
