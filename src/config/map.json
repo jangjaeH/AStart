@@ -399,6 +399,18 @@
       ]
     },
     {
+      "id": "EQ-B11-ACCESS",
+      "x": 11,
+      "y": 4.5,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
       "id": "EQ-T5-ACCESS",
       "x": 13,
       "y": 2.6,
@@ -1117,8 +1129,14 @@
       "bidirectional": true
     },
     {
-      "from": "M8.5",
+      "from": "T8.5",
       "to": "SAFETY-ZONE-3",
+      "cost": 0.8,
+      "bidirectional": true
+    },
+    {
+      "from": "M8",
+      "to": "M8.5",
       "cost": 0.8,
       "bidirectional": true
     },
@@ -1245,6 +1263,12 @@
     {
       "from": "T9",
       "to": "T10",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "M5",
+      "to": "EQ-B11-ACCESS",
       "cost": 0.5,
       "bidirectional": true
     }

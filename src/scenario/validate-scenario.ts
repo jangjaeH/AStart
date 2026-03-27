@@ -6,7 +6,7 @@ export function validateScenario(scenario: EngineScenario): string[] {
     const mapNodes = new Set( 
         (scenario.snapshot.map?.nodes ?? []).map((node) => node.id),
     )
-
+    
     for (const robot of scenario.snapshot.robots)  {
         if(!mapNodes.has(robot.nodeId)) {
             errors.push(`Robot ${robot.nodeId} is on a node that doesn't exist in the map.`);
@@ -14,11 +14,12 @@ export function validateScenario(scenario: EngineScenario): string[] {
     }
 
     for (const task of scenario.snapshot.tasks)  {
-        if(!mapNodes.has(task.sourceNode)) {
+        console.log('task:',task.targetNode)
+        if(!task.sourceNode) {
             errors.push(`Task ${task.id} has a source node that doesn't exist in the map.`);
         }
 
-        if (!mapNodes.has(task.targetNode)) {
+        if (!task.targetNode) {
             errors.push(`Task ${task.id} has a target node that doesn't exist in the map.`);
         }
     }

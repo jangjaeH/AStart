@@ -210,11 +210,11 @@
         <div class="stats-grid">
           <div class="stat">
             <span class="stat-label">Nodes</span>
-            <span class="stat-value">58</span>
+            <span class="stat-value">59</span>
           </div>
           <div class="stat">
             <span class="stat-label">Edges</span>
-            <span class="stat-value">104</span>
+            <span class="stat-value">105</span>
           </div>
         </div>
       </section>
@@ -623,6 +623,18 @@
       "id": "EQ-T4-ACCESS",
       "x": 11,
       "y": 2.6,
+      "type": "service",
+      "zone": "TOP-EQUIPMENT",
+      "tags": [
+        "equipment",
+        "access",
+        "photo-blue"
+      ]
+    },
+    {
+      "id": "EQ-B11-ACCESS",
+      "x": 11,
+      "y": 4.5,
       "type": "service",
       "zone": "TOP-EQUIPMENT",
       "tags": [
@@ -1490,6 +1502,12 @@
     {
       "from": "T9",
       "to": "T10",
+      "cost": 0.5,
+      "bidirectional": true
+    },
+    {
+      "from": "M5",
+      "to": "EQ-B11-ACCESS",
       "cost": 0.5,
       "bidirectional": true
     }

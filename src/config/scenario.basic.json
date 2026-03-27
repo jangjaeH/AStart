@@ -29,8 +29,38 @@
 ],
 "equipments": [
     {
-    "id": "EQ-A1",
-    "accessNodeId": "EQ-A1",
+    "id": "EQ-L1-ACCESS",
+    "accessNodeId": "EQ-L1-ACCESS",
+    "processTimeSec": 20,
+    "setupTimeSec": 600
+    },
+    {
+    "id": "EQ-L2-ACCESS",
+    "accessNodeId": "EQ-L2-ACCESS",
+    "processTimeSec": 20,
+    "setupTimeSec": 600
+    },
+    {
+    "id": "EQ-B3-ACCESS",
+    "accessNodeId": "EQ-B3-ACCESS",
+    "processTimeSec": 20,
+    "setupTimeSec": 600
+    },
+    {
+    "id": "EQ-T2-ACCESS",
+    "accessNodeId": "EQ-T2-ACCESS",
+    "processTimeSec": 20,
+    "setupTimeSec": 600
+    },
+    {
+    "id": "EQ-T4-ACCESS",
+    "accessNodeId": "EQ-T4-ACCESS",
+    "processTimeSec": 20,
+    "setupTimeSec": 5
+    },
+    {
+    "id": "EQ-B11-ACCESS",
+    "accessNodeId": "EQ-B11-ACCESS",
     "processTimeSec": 20,
     "setupTimeSec": 5
     }
@@ -40,28 +70,28 @@
     "id": "TASK-001",
     "robotId": "R1",
     "sourceNode": "EQ-L1-ACCESS",
-    "targetNode": "EQ-A1",
+    "targetNode": "EQ-B3-ACCESS",
     "priority": 100
     },
     {
     "id": "TASK-002",
     "robotId": "R2",
     "sourceNode": "EQ-L2-ACCESS",
-    "targetNode": "EQ-A1",
+    "targetNode": "EQ-T2-ACCESS",
     "priority": 100
     },
     {
     "id": "TASK-003",
     "robotId": "R3",
-    "sourceNode": "SAFETY-ZONE-3",
-    "targetNode": "EQ-A1",
+    "sourceNode": "SAFETY-ZONE-3", 
+    "targetNode": "EQ-T4-ACCESS",
     "priority": 100
     },
     {
     "id": "TASK-004",
     "robotId": "R4",
     "sourceNode": "SAFETY-ZONE-4",
-    "targetNode": "EQ-A1",
+    "targetNode": "EQ-B11-ACCESS", 
     "priority": 100
     }
 ],
