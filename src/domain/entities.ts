@@ -110,6 +110,13 @@ export interface EngineScenario {
   optimization: EngineOptimizationConfig;
 }
 
+
+export interface Facilities {
+  address: string;
+  value: string | number;
+  time: string;
+}
+
 export interface RobotExecutionSummary {
   robotId: string;
   taskId: string;

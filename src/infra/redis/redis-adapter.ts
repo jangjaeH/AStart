@@ -1,5 +1,5 @@
 import IORedis from "ioredis";
-import type { WorldSnapshot } from "../../domain/entities";
+import type { WorldSnapshot, Facilities } from "../../domain/entities";
 
 export class RedisAdapter {
   private client: IORedis | null = null;
@@ -24,6 +24,18 @@ export class RedisAdapter {
       await this.disconnect();
       return false;
     }
+  }
+
+  async publishFacilities(facilities: Facilities): Promise<void> {
+    if (!this.client) {
+      return;
+    }
+
+    JSON.stringify({
+        address: facilities.address,
+        value: facilities.value,
+        time: new Date().toISOString()
+    })
   }
 
   async publishPlan(snapshot: WorldSnapshot): Promise<void> {
