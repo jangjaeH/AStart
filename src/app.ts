@@ -3,8 +3,8 @@ import { RedisAdapter } from "./infra/redis/redis-adapter";
 import { createSeedScenario } from "./simulation/seed-scenario";
 
 async function bootstrap() {
-  const port = Number(process.env.REDIS_PORT ?? 3000);
-  const pollKey = process.env.REDIS_POLL_KEY ?? "MB4000";
+  const port = Number(process.env.PORT ?? 3000);
+  const pollKey = process.env.REDIS_POLL_KEY ?? "Melsec.W";
   const pollIntervalMs = Number(process.env.REDIS_POLL_INTERVAL_MS ?? 1000);
   const scenario = createSeedScenario();
   const redis = new RedisAdapter();
@@ -17,7 +17,7 @@ async function bootstrap() {
         JSON.stringify({
           source: "redis",
           key: pollKey,
-          db: 0,
+          db: redis.getDb(),
           value,
           polledAt: new Date().toISOString(),
         }),
@@ -32,6 +32,7 @@ async function bootstrap() {
         message: "Multi-robot A* engine server started",
         port,
         redisConnected,
+        redisDb: redis.getDb(),
         redisPollKey: pollKey,
         redisPollIntervalMs: pollIntervalMs,
         endpoints: ["/health", "/robots", "/tasks", "/simulation/start"],

@@ -4,8 +4,9 @@ import dotenv from "dotenv";
 dotenv.config();
 export class RedisAdapter {
   private client: IORedis | null = null;
+  private readonly db = Number(process.env.REDIS_DB ?? 0);
 
-  private readonly url = `redis://${process.env.REDIS_USERNAME}:${process.env.REDIS_PASSWORD}@${process.env.REDIS_HOST}:${process.env.REDIS_PORT}/0`;
+  private readonly url = `redis://${process.env.REDIS_USERNAME}:${process.env.REDIS_PASSWORD}@${process.env.REDIS_HOST}:${process.env.REDIS_PORT}/${this.db}`;
   async connect(): Promise<boolean> {
     if (!this.url) {
       return false;
@@ -62,6 +63,10 @@ export class RedisAdapter {
         console.error("[REDIS POLL ERROR] key=" + key, error);
       }
     }, intervalMs);
+  }
+
+  getDb(): number {
+    return this.db;
   }
 
   async publishPlan(snapshot: WorldSnapshot): Promise<void> {
