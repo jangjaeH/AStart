@@ -16,7 +16,8 @@ async function bootstrap() {
   await redis.publishPlan(scenario.snapshot);
 
   setInterval(async () => {
-    await task.robotScheduler();
+    const tasks =  await task.robotScheduler();
+    console.log("Scheduled tasks:", tasks);
   },1000);
   
   // if (redisConnected) {
