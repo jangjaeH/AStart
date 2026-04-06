@@ -1,5 +1,6 @@
 import { plannerConfig } from "../config/planner-config";
 import type { PlannedRoute, RobotState, SchedulerResult, Task, WorldSnapshot } from "../domain/entities";
+import { RedisAdapter, parseFacilities, parseRobots } from "../infra/redis/redis-adapter";
 import { buildWeightedMap } from "../planner/cost-model";
 import { loadPlannerMap } from "../planner/map-loader";
 import { WeightedAStarPlanner } from "../planner/weighted-astar";
@@ -44,4 +45,23 @@ export function runScheduler(snapshot: WorldSnapshot): SchedulerResult {
     routes,
     unassignedTasks: tasks.filter((task: Task) => task.status === "READY"),
   };
+}
+
+
+export class TaskScheduler {
+  
+  async robotScheduler() : Promise<any[]> {
+    const redis = new RedisAdapter();
+    const redissConnedted = await redis.connect();
+    if(redissConnedted) {
+      const facilitiesData = await redis.getString("Melsec.W");
+      const facilitieParseData = parseFacilities(facilitiesData ?? "{}");
+      const robotData = await redis.getString("ammrStatusInfo");
+      const robotParseData = parseRobots(robotData ?? "{}");
+      
+      // const robotData =  parseFacilities(String(await redis.getString("ammrStatusInfo")) ?? "{}");
+    }
+
+    return [];
+  }
 }

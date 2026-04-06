@@ -1,5 +1,5 @@
 import IORedis from "ioredis";
-import type { WorldSnapshot, Facilities } from "../../domain/entities";
+import type { WorldSnapshot, Facilities, Robots } from "../../domain/entities";
 import dotenv from "dotenv";
 dotenv.config();
 export class RedisAdapter {
@@ -25,21 +25,6 @@ export class RedisAdapter {
       await this.disconnect();
       return false;
     }
-  }
-
-  async publishFacilities(facilities: Facilities): Promise<void> {
-    if (!this.client) {
-      return;
-    }
-
-    await this.client.set(
-      facilities.address,
-      JSON.stringify({
-        address: facilities.address,
-        value: facilities.value,
-        time: new Date().toISOString(),
-      }),
-    );
   }
 
   async getString(key: string): Promise<string | null> {
@@ -93,4 +78,31 @@ export class RedisAdapter {
     await this.client.quit();
     this.client = null;
   }
+}
+
+export function toFacilities(address: string, value: string | null): Facilities {
+  const normalizedValue = value !== null && !Number.isNaN(Number(value)) ? Number(value) : value ?? "";
+
+  return {
+    address,
+    value: normalizedValue
+  }
+}
+
+export function parseFacilities(raw: string): Facilities[] {
+  const parsed = JSON.parse(raw) as Record<string, string>;
+
+  return Object.entries(parsed).map(([address, value]) => ({
+    address,
+    value: Number.isNaN(Number(value)) ? value : Number(value)
+  }));
+}
+
+export function parseRobots(raw: string) : Robots[] {
+  const parsed = JSON.parse(raw) as Record<number, { armSlot: string; state: number }>;
+  return Object.entries(parsed).map(([robotId, { armSlot, state }]) => ({
+    robotId: Number(robotId),
+    armSlot,
+    state
+  }));
 }

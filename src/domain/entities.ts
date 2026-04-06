@@ -114,7 +114,12 @@ export interface EngineScenario {
 export interface Facilities {
   address: string;
   value: string | number;
-  time: string;
+}
+
+export interface Robots {
+  robotId: number;
+  armSlot: string;
+  state: number;
 }
 
 export interface RobotExecutionSummary {
