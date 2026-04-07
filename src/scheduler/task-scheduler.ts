@@ -119,7 +119,7 @@ export class TaskScheduler {
       const robotParseData = parseRobots(robotData ?? "{}");
 
       return ROBOT_DISPATCH_RULES.flatMap((rule) => {
-        const robot = robotParseData.find((item) => item.robotId === rule.robotId);
+        const robot = robotParseData.find((item) => item.robotId === rule.robotId);        
         if (robot?.state !== 5) {
           return [];
         }

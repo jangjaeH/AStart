@@ -98,11 +98,30 @@ export function parseFacilities(raw: string): Facilities[] {
   }));
 }
 
-export function parseRobots(raw: string) : Robots[] {
-  const parsed = JSON.parse(raw) as Record<number, { armSlot: string; state: number }>;
-  return Object.entries(parsed).map(([robotId, { armSlot, state }]) => ({
-    robotId: Number(robotId),
-    armSlot,
-    state
-  }));
+type RawRobotValue = {
+  robotId?: number;
+  robot_id?: number;
+  armSlot?: string;
+  arm_slot?: string;
+  state?: number;
+};
+
+function toRobot(recordKey: string, value: RawRobotValue): Robots {
+  const robotId = value.robot_id ?? value.robotId ?? Number(recordKey);
+
+  return {
+    robotId,
+    armSlot: value.arm_slot ?? value.armSlot ?? "",
+    state: value.state ?? 0,
+  };
+}
+
+export function parseRobots(raw: string): Robots[] {
+  const parsed = JSON.parse(raw) as RawRobotValue[] | Record<string, RawRobotValue>;
+
+  if (Array.isArray(parsed)) {
+    return parsed.map((value, index) => toRobot(String(index), value));
+  }
+
+  return Object.entries(parsed).map(([recordKey, value]) => toRobot(recordKey, value));
 }
