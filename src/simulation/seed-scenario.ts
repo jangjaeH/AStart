@@ -1,6 +1,6 @@
 import map from "../config/map.json";
 import type { EngineScenario, PlannerMap } from "../domain/entities";
-import { defaultOptimizationConfig, defaultTimingConfig } from "../engine/defaults";
+import { defaultTimingConfig } from "../engine/defaults";
 
 const scenarioMap: PlannerMap = map as PlannerMap;
 
@@ -15,7 +15,6 @@ export function createSeedScenario(): EngineScenario {
       defaultTaskServiceSeconds: 12,
       defaultEquipmentProcessSeconds: 28,
     },
-    optimization: defaultOptimizationConfig,
     snapshot: {
       version: 1,
       map: scenarioMap,

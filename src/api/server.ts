@@ -1,7 +1,7 @@
 import express from "express";
 import { z } from "zod";
 import type { EngineScenario } from "../domain/entities";
-import { createPlannerEngine } from "../engine";
+import { runScenario } from "../engine";
 import { createSeedScenario } from "../simulation/seed-scenario";
 
 const taskSchema = z.object({
@@ -14,7 +14,6 @@ const taskSchema = z.object({
 export function createServer(initialScenario: EngineScenario = createSeedScenario()) {
   const app = express();
   app.use(express.json());
-  const engine = createPlannerEngine();
 
   let scenario = initialScenario;
 
@@ -44,8 +43,7 @@ export function createServer(initialScenario: EngineScenario = createSeedScenari
   });
 
   app.post("/simulation/start", (_req, res) => {
-    const result = engine.runScenario(scenario);
-    res.json(result);
+    res.json(runScenario(scenario));
   });
 
   return app;

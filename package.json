@@ -7,7 +7,6 @@
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc --noEmit",
     "simulate": "npm run build && node dist/simulation/scenario-runner.js",
-    "scenario:test": "npm run build && node dist/scenario/test-load-scenario.js",
     "map:view": "node scripts/generate-map-viewer.js",
     "start": "npm run build && node dist/app.js",
     "dev": "npm run start"
@@ -26,7 +25,6 @@
     "dotenv": "^17.4.0",
     "express": "^5.2.1",
     "ioredis": "^5.10.1",
-    "pdf-parse": "^2.4.5",
     "zod": "^4.3.6"
   },
   "devDependencies": {

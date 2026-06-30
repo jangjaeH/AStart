@@ -98,16 +98,11 @@ export interface EngineTimingConfig {
   defaultEquipmentProcessSeconds: number;
 }
 
-export interface EngineOptimizationConfig {
-  objective: "minimize_makespan" | "minimize_total_cost" | "balanced";
-}
-
 export interface EngineScenario {
   id: string;
   name: string;
   snapshot: WorldSnapshot;
   timing: EngineTimingConfig;
-  optimization: EngineOptimizationConfig;
 }
 
 

@@ -1,43 +1,8 @@
 import { createServer } from "./api/server";
-import { RedisAdapter, parseFacilities } from "./infra/redis/redis-adapter";
+import { RedisAdapter } from "./infra/redis/redis-adapter";
 import { createSeedScenario } from "./simulation/seed-scenario";
-import type { Facilities } from "./domain/entities";
 import { TaskScheduler } from "./scheduler/task-scheduler";
-import { createPlannerEngine } from "./engine";
-
-type  ScenarioFile = {
-  name: string;
-  mapFile: string;
-  robots: Array<[
-    robotId: string,
-    nodeId: string,
-    heading: "N" | "E" | "S" | "W",
-    mode: "IDLE" | "MOVING" | "WAITING" | "ERROR"
-  ]>;
-  equipments: Array<[
-    id: string,
-    accessNodeId: string,
-    processTimeSec?: number,
-    setupTimeSec?: number
-  ]>;
-  tasks: Array<[
-    id: string,
-    robotId: string,
-    sourceNode: string,
-    targetNode: string,
-    priority: number
-  ]>;
-  timing: {
-    robotMoveSecondsPerEdge: number,
-    robotWaitSecondsPerTick: number,
-    defaultTaskServiceSeconds: number,
-    defaultEquipmentProcessSeconds: number
-  },
-  optimization: {
-    objective: string
-  }
-
-}
+import { runScenario } from "./engine";
 
 async function bootstrap() {
   const port = Number(process.env.PORT ?? 3000);
@@ -46,9 +11,7 @@ async function bootstrap() {
   const scenario = createSeedScenario();
   const redis = new RedisAdapter();
   const task = new TaskScheduler();
-  let redisData: Facilities[] = [];
   const redisConnected = await redis.connect();
-  const planner = createPlannerEngine();
   await redis.publishPlan(scenario.snapshot);
 
   
@@ -85,7 +48,7 @@ async function bootstrap() {
     // console.log('equipments:', scenario.snapshot.equipments);
     // console.log('equipmentFaults:', scenario.snapshot.equipmentFaults);
     
-    const result = planner.runScenario(scenario);
+    const result = runScenario(scenario);
     console.log(JSON.stringify({
         scenarioId: result.scenarioId,
         scenarioName: result.scenarioName,

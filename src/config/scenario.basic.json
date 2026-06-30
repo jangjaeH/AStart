@@ -100,8 +100,5 @@
     "robotWaitSecondsPerTick": 2,
     "defaultTaskServiceSeconds": 10,
     "defaultEquipmentProcessSeconds": 20
-},
-"optimization": {
-    "objective": "minimize_makespan"
 }
 }

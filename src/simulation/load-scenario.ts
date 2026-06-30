@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import type { EngineScenario, PlannerMap  } from "../domain/entities";
-import { defaultOptimizationConfig, defaultTimingConfig } from "../engine/defaults";
+import { defaultTimingConfig } from "../engine/defaults";
 
 type RawScenarioRobot = {
     robotId: string;
@@ -35,7 +35,6 @@ type RawScenarioFile = {
     equipments?: RawScenarioEquipment[];
     tasks: RawScenarioTask[];
     timing?: Partial<EngineScenario["timing"]>;
-    optimization?: Partial<EngineScenario["optimization"]>;
 
 }
 
@@ -57,10 +56,6 @@ export function loadScenarioFromFile(filePath: string): EngineScenario  {
         timing: {
         ...defaultTimingConfig,
         ...rawScenario.timing,
-        },
-        optimization: {
-        ...defaultOptimizationConfig,
-        ...rawScenario.optimization,
         },
         snapshot: {
         version: 1,

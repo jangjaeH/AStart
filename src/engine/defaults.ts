@@ -1,4 +1,4 @@
-import type { EngineOptimizationConfig, EngineTimingConfig } from "../domain/entities";
+import type { EngineTimingConfig } from "../domain/entities";
 
 export const defaultTimingConfig: EngineTimingConfig = {
   secondsPerTick: 1,
@@ -6,8 +6,4 @@ export const defaultTimingConfig: EngineTimingConfig = {
   robotWaitSecondsPerTick: 1,
   defaultTaskServiceSeconds: 8,
   defaultEquipmentProcessSeconds: 20,
-};
-
-export const defaultOptimizationConfig: EngineOptimizationConfig = {
-  objective: "minimize_makespan",
 };

@@ -35,21 +35,6 @@ export class RedisAdapter {
     return this.client.get(key);
   }
 
-  startPollingString(
-    key: string,
-    intervalMs: number,
-    onData: (value: string | null) => void,
-  ): NodeJS.Timeout {
-    return setInterval(async () => {
-      try {
-        const value = await this.getString(key);
-        onData(value);
-      } catch (error) {
-        console.error("[REDIS POLL ERROR] key=" + key, error);
-      }
-    }, intervalMs);
-  }
-
   getDb(): number {
     return this.db;
   }
@@ -77,15 +62,6 @@ export class RedisAdapter {
 
     await this.client.quit();
     this.client = null;
-  }
-}
-
-export function toFacilities(address: string, value: string | null): Facilities {
-  const normalizedValue = value !== null && !Number.isNaN(Number(value)) ? Number(value) : value ?? "";
-
-  return {
-    address,
-    value: normalizedValue
   }
 }
 

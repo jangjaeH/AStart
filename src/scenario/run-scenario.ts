@@ -1,4 +1,4 @@
-import { createPlannerEngine } from "../engine";   
+import { runScenario } from "../engine";   
 import { loadScenarioFromFile } from "../simulation/load-scenario";
 import { validateScenario } from "../scenario/validate-scenario";
 
@@ -14,8 +14,7 @@ if(errors.length > 0) {
     process.exit(1);
 }
 
-const engine = createPlannerEngine();
-const result = engine.runScenario(scenario);
+const result = runScenario(scenario);
 
 console.log(JSON.stringify({
     scenarioId: result.scenarioId,
